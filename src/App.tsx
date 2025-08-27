@@ -1,14 +1,13 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Homepage from './pages/Homepage';
-import About from './pages/About';
-import Cohorts from './pages/Cohorts';
-import Contact from './pages/Contact';
-import Checkout from './pages/Checkout';
-import PaymentSuccess from './pages/PaymentSuccess';
-import PaymentCancel from './pages/PaymentCancel';
+import Navbar from './components/Navbar.tsx';
+import Footer from './components/Footer.tsx';
+import Homepage from './pages/Homepage.tsx';
+import About from './pages/About.tsx';
+import Cohorts from './pages/Cohorts.tsx';
+import Application from './pages/application.tsx'; 
+import Contact from './pages/Contact.tsx';
+import PaymentSuccess from './pages/PaymentSuccess.tsx';
+import PaymentCancel from './pages/PaymentCancel.tsx';
 
 function App() {
   return (
@@ -19,8 +18,8 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />
           <Route path="/cohorts" element={<Cohorts />} />
+          <Route path="/application" element={<Application />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/checkout" element={<Checkout />} />
           <Route path="/payment/success" element={<PaymentSuccess />} />
           <Route path="/payment/cancel" element={<PaymentCancel />} />
         </Routes>

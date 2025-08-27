@@ -26,10 +26,10 @@ const Homepage = () => {
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  to="/checkout"
+                  to="/application.php"
                   className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors inline-flex items-center justify-center group"
                 >
-                  Enroll Now - $12,999
+                  Enroll Now
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -196,7 +196,7 @@ const Homepage = () => {
 
           <div className="text-center mt-12">
             <Link
-              to="/checkout"
+              to="/application.php"
               className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors inline-flex items-center group"
             >
               Enroll in August 2025 Cohort
