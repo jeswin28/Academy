@@ -107,7 +107,7 @@ const Cohorts = () => {
               <div className="flex items-center justify-center space-x-8 text-sm">
                 <div className="flex items-center space-x-2">
                   <Calendar className="h-5 w-5 text-green-600" />
-                  <span className="font-semibold">Next Start: August 1, 2025</span>
+                  <span className="font-semibold">Next Start: September 1, 2025</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Users className="h-5 w-5 text-blue-600" />
@@ -166,57 +166,15 @@ const Cohorts = () => {
                   </div>
 
                   <button className="mt-8 w-full bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors inline-flex items-center justify-center group">
-                    <Link to="/checkout" className="flex items-center justify-center w-full">
+                    <Link to="/application" className="flex items-center justify-center w-full">
                       Apply for August 2025 Cohort
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </button>
                 </div>
 
-                {/* Pricing Information */}
+                {/* Technologies and Outcomes */}
                 <div className="lg:col-span-2">
-                  <div className="bg-green-50 rounded-xl p-6 mb-8">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Investment & Payment Options</h4>
-                    <div className="grid md:grid-cols-3 gap-6">
-                      <div className="bg-white p-4 rounded-lg border-2 border-green-200">
-                        <div className="text-center">
-                          <h5 className="font-semibold text-gray-900 mb-2">Full Payment</h5>
-                          <div className="text-2xl font-bold text-green-600 mb-1">$12,999</div>
-                          <div className="text-sm text-gray-500 line-through mb-2">$14,999</div>
-                          <div className="text-sm text-green-600 font-medium mb-3">Save $2,000</div>
-                          <p className="text-xs text-gray-600">Best value - pay once and save</p>
-                        </div>
-                      </div>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <div className="text-center">
-                          <h5 className="font-semibold text-gray-900 mb-2">3-Month Plan</h5>
-                          <div className="text-2xl font-bold text-gray-900 mb-1">$4,999</div>
-                          <div className="text-sm text-gray-500 mb-2">per month</div>
-                          <div className="text-sm text-gray-600 mb-3">Total: $14,997</div>
-                          <p className="text-xs text-gray-600">Flexible monthly payments</p>
-                        </div>
-                      </div>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <div className="text-center">
-                          <h5 className="font-semibold text-gray-900 mb-2">6-Month Plan</h5>
-                          <div className="text-2xl font-bold text-gray-900 mb-1">$2,699</div>
-                          <div className="text-sm text-gray-500 mb-2">per month</div>
-                          <div className="text-sm text-gray-600 mb-3">Total: $16,194</div>
-                          <p className="text-xs text-gray-600">Lowest monthly payment</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-center mt-6">
-                      <Link
-                        to="/checkout"
-                        className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center group"
-                      >
-                        Enroll Now - Choose Payment Plan
-                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h4 className="text-xl font-semibold text-gray-900 mb-4">Technologies You'll Master</h4>
@@ -409,7 +367,7 @@ const Cohorts = () => {
 
           <div className="text-center mt-12">
             <Link
-              to="/checkout"
+              to="/application"
               className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors inline-flex items-center group"
             >
               Start Your MERN Stack Journey
@@ -572,14 +530,14 @@ const Cohorts = () => {
 
           <div className="text-center mt-12">
             <Link
-              to="/checkout"
+              to="/application"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors inline-flex items-center group"
             >
-              Apply for August 2025 Cohort
+              Apply for September 2025 Cohort
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="text-green-100 mt-4">
-              Application deadline: July 1, 2025 | Rolling admissions until spots are filled
+              Application deadline: August 30, 2025 | Rolling admissions until spots are filled
             </p>
           </div>
         </div>

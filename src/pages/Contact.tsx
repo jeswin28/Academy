@@ -9,12 +9,6 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -31,7 +25,7 @@ const Contact = () => {
             Get in Touch
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have questions about our programs? Ready to start your learning journey? 
+            Have questions about our programs? Ready to start your learning journey?
             We're here to help you every step of the way.
           </p>
         </div>
@@ -57,8 +51,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
+                    <p className="text-gray-600">+91 87908 47755</p>
+                    <p className="text-sm text-gray-500">Mon-Fri 9AM-5PM IST</p>
                   </div>
                 </div>
 
@@ -80,9 +74,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
                     <p className="text-gray-600">
-                      123 Learning Street<br />
-                      Tech District, TD 12345<br />
-                      United States
+                      D.no- 40-1-173A, Second floor,<br />
+                      Hussain street, Manyavar Showroom beside road,
+                      Bundar Road, Vijayawada,
+                      Andhra Pradesh-520010
                     </p>
                   </div>
                 </div>
@@ -94,9 +89,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Office Hours</h3>
                     <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 10:00 AM - 4:00 PM<br />
-                      Sunday: Closed
+                      Monday - Friday: 9:00 AM - 5:00 PM<br />
+                      Saturday & Sunday : Closed
                     </p>
                   </div>
                 </div>
@@ -107,8 +101,8 @@ const Contact = () => {
             <div className="lg:col-span-2">
               <div className="bg-white rounded-xl shadow-lg p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
+
+                <form action="/contact.php" method="POST" className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -125,7 +119,7 @@ const Contact = () => {
                         placeholder="Your full name"
                       />
                     </div>
-                    
+
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                         Email Address *
@@ -196,7 +190,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold text-green-900 mb-1">Quick Response Guarantee</h4>
                       <p className="text-green-800 text-sm">
-                        We typically respond to all inquiries within 24 hours during business days. 
+                        We typically respond to all inquiries within 24 hours during business days.
                         For urgent matters, please call us directly.
                       </p>
                     </div>
@@ -219,6 +213,7 @@ const Contact = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Left Side FAQs */}
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">How do I apply for an offline cohort?</h3>
@@ -226,22 +221,21 @@ const Contact = () => {
                   Simply click "Apply Now" on any cohort page, fill out the application form, complete the skills assessment, and schedule your interview. The process takes about 1-2 weeks.
                 </p>
               </div>
-              
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">What's included in online courses?</h3>
                 <p className="text-gray-600 text-sm">
                   All courses include recorded lectures, downloadable resources, quizzes, hands-on projects, lifetime access, and a completion certificate.
                 </p>
               </div>
-              
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Do you offer payment plans?</h3>
                 <p className="text-gray-600 text-sm">
-                  Yes! We offer flexible payment options including monthly installments for both offline cohorts and online courses. Contact us to discuss your options.
+                No—at the moment we don’t offer payment plans. All fees are due in full at enrollment. we’re happy to provide invoices and receipts. If you need extra time before a cohort starts, contact us and we’ll try to suggest a suitable upcoming batch.
                 </p>
               </div>
             </div>
 
+            {/* Right Side FAQs */}
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">What if I can't attend the full 90-day cohort?</h3>
@@ -249,14 +243,12 @@ const Contact = () => {
                   Our cohorts require full commitment for the best results. However, if you have concerns about scheduling, please contact us to discuss potential accommodations.
                 </p>
               </div>
-              
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Do you provide career support?</h3>
                 <p className="text-gray-600 text-sm">
                   Absolutely! We offer resume reviews, interview preparation, portfolio development, and connections to our partner companies for job placement assistance.
                 </p>
               </div>
-              
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Can I switch between tracks during the cohort?</h3>
                 <p className="text-gray-600 text-sm">
@@ -279,26 +271,28 @@ const Contact = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-96 bg-gray-200 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-600">Interactive Map</p>
-                <p className="text-sm text-gray-500">123 Learning Street, Tech District, TD 12345</p>
-              </div>
+            {/* Embedded Google Map */}
+            <div className="h-96 w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.4907966934484!2d80.6430196!3d16.5013018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35fba7954b7eed%3A0xedf2a56f55789d1a!2sNEXFERN%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1756336106545!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
+
             <div className="p-6">
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div className="text-center">
                   <h3 className="font-semibold text-gray-900 mb-2">Public Transportation</h3>
-                  <p className="text-sm text-gray-600">Metro stations within 5-minute walk</p>
+                  <p className="text-sm text-gray-600">RTC Bus Stop within 2-minute walk</p>
                 </div>
                 <div className="text-center">
                   <h3 className="font-semibold text-gray-900 mb-2">Parking</h3>
                   <p className="text-sm text-gray-600">Free student parking available</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="font-semibold text-gray-900 mb-2">Amenities</h3>
-                  <p className="text-sm text-gray-600">Cafeteria, study areas, and lounge spaces</p>
                 </div>
               </div>
             </div>
@@ -308,4 +302,5 @@ const Contact = () => {
     </div>
   );
 };
+
 export default Contact;

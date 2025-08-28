@@ -4,29 +4,25 @@ import { Users, Target, Award, Globe } from 'lucide-react';
 const About = () => {
   const team = [
     {
-      name: 'Dr. Sarah Mitchell',
-      role: 'Founder & Chief Academic Officer',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Former VP of Engineering at Google with 15 years of experience in tech education and curriculum development.'
+      name: 'Jeswin John Eernapati',
+      role: 'Founder',
+      image: '/images/Jeswin.JPG',
     },
     {
-      name: 'Marcus Thompson',
+      name: 'Rishika Muppidi',
+      role: 'Chief Academic Officer',
+      image: '/images/Rishika.JPG',
+    },
+    {
+      name: 'Vijay Roy',
       role: 'Head of Marketing Programs',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Ex-Marketing Director at HubSpot, specialized in digital strategy and growth marketing for startups and enterprises.'
+      image: '/images/Vijay.JPG',
     },
     {
-      name: 'Lisa Chen',
-      role: 'Lead Design Instructor',
-      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Senior UX Designer at Airbnb with expertise in design systems, user research, and product strategy.'
+      name: 'Beshitha',
+      role: 'Consultant',
+      image: '/images/beshitha.png',
     },
-    {
-      name: 'David Rodriguez',
-      role: 'Head of Career Services',
-      image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Former HR Director at Microsoft, specializing in tech talent acquisition and career development programs.'
-    }
   ];
 
   return (
@@ -55,14 +51,13 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 2020 by a team of industry veterans from Google, Microsoft, and leading design agencies, Nexfern Academy was born from a simple observation: traditional education wasn't preparing students for the rapidly evolving demands of the modern workplace.
+                Nexfern Academy was founded in 2024 with one mission: to bridge the gap between classroom learning and real-world industry needs. We saw that traditional education often left students unprepared for the fast-changing demands of technology, marketing, and design—and decided to change that.
                 </p>
                 <p>
-                  We created a revolutionary 90-day intensive model that combines the best of both worlds: the focused, collaborative energy of in-person learning with the flexibility and accessibility of online education.
+Our 90-day cohort model was built to be different. We combine hands-on, in-person learning with the resources and flexibility of a modern learning management system. Students don’t just learn concepts—they apply them through projects, hackathons, and mentorship from industry professionals.
                 </p>
                 <p>
-                  Today, we've graduated over 500 students who've gone on to launch successful careers at top companies and start their own ventures. Our unique approach has been recognized by industry leaders and education experts alike.
-                </p>
+                In a short time, Nexfern Academy has become a launchpad for ambitious learners. Our graduates have gone on to secure opportunities in startups, established firms, and even built their own ventures. With every cohort, we’re shaping the next generation of creators, innovators, and leaders.                </p>
               </div>
             </div>
             <div className="relative">
@@ -135,7 +130,7 @@ const About = () => {
                 />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
                 <p className="text-blue-600 font-medium mb-3">{member.role}</p>
-                <p className="text-sm text-gray-600 leading-relaxed">{member.bio}</p>
+              
               </div>
             ))}
           </div>
@@ -202,20 +197,20 @@ const About = () => {
           
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">500+</div>
-              <p className="text-gray-600">Successful Graduates</p>
+              <div className="text-4xl font-bold text-green-600 mb-2">20+</div>
+              <p className="text-gray-600">Students in Our First Batch</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">95%</div>
-              <p className="text-gray-600">Job Placement Rate</p>
+              <div className="text-4xl font-bold text-blue-600 mb-2">90 Days</div>
+              <p className="text-gray-600">JIntensive Offline Learning Journey</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">$75K</div>
-              <p className="text-gray-600">Average Starting Salary</p>
+              <div className="text-4xl font-bold text-purple-600 mb-2">3 Tracks</div>
+              <p className="text-gray-600">Tech, Marketing, and Design</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">4.9/5</div>
-              <p className="text-gray-600">Student Satisfaction</p>
+              <div className="text-4xl font-bold text-orange-600 mb-2">100%</div>
+              <p className="text-gray-600">Commitment to Growth & Innovation</p>
             </div>
           </div>
         </div>

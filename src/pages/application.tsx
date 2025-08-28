@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
-    CreditCard,
     Shield,
-    Lock,
     Calendar,
     Users,
     Clock,
     MapPin,
-    CheckCircle
+    CheckCircle,
+    User,
+    BookOpen,
+    Briefcase
 } from 'lucide-react';
 
 const Application = () => {
@@ -18,10 +19,12 @@ const Application = () => {
         lastName: '',
         email: '',
         phone: '',
-        cardName: '',
-        cardNumber: '',
-        expiryDate: '',
-        cvv: '',
+        address: '',
+        city: '',
+        state: '',
+        zip: '',
+        education: '',
+        experience: '',
     });
 
     const handleInputChange = (e) => {
@@ -30,15 +33,6 @@ const Application = () => {
             ...prev,
             [name]: value
         }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // In a real application, you would typically send the form data to a backend API
-        // and then handle the response. For this example, we'll simulate
-        // a successful payment and redirect.
-        console.log('Application submitted with data:', formData);
-        window.location.href = '/payment/success';
     };
 
     return (
@@ -76,7 +70,7 @@ const Application = () => {
                                 <div className="space-y-2 text-sm text-gray-600">
                                     <div className="flex items-center space-x-2">
                                         <Calendar className="h-4 w-4" />
-                                        <span>Starts August 1, 2025</span>
+                                        <span>Starts September 1, 2025</span>
                                     </div>
                                     <div className="flex items-center space-x-2">
                                         <Clock className="h-4 w-4" />
@@ -122,147 +116,75 @@ const Application = () => {
 
                     {/* Right: Form */}
                     <div className="lg:col-span-2">
-                        <form onSubmit={handleSubmit} className="space-y-8">
+                        <form action="/application.php" method="POST" className="space-y-8">
                             {/* Personal Info */}
                             <div className="bg-white rounded-xl shadow-lg p-8">
-                                <div className="flex items-center space-x-2 mb-6">
+                                <div className="flex items-center space-x-3 mb-6">
+                                    <User className="h-6 w-6 text-green-600" />
                                     <h2 className="text-2xl font-bold text-gray-900">Personal Information</h2>
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                                            First Name *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="firstName"
-                                            name="firstName"
-                                            required
-                                            value={formData.firstName}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                                            placeholder="Your first name"
-                                        />
+                                    <div className="col-span-1">
+                                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" required value={formData.firstName} onChange={handleInputChange} className="w-full input-style" placeholder="Your first name" />
                                     </div>
-                                    <div>
-                                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Last Name *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="lastName"
-                                            name="lastName"
-                                            required
-                                            value={formData.lastName}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                                            placeholder="Your last name"
-                                        />
+                                    <div className="col-span-1">
+                                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                        <input type="text" id="lastName" name="lastName" required value={formData.lastName} onChange={handleInputChange} className="w-full input-style" placeholder="Your last name" />
                                     </div>
-                                    <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Email Address *
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            required
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                                            placeholder="your.email@example.com"
-                                        />
+                                    <div className="col-span-1">
+                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                        <input type="email" id="email" name="email" required value={formData.email} onChange={handleInputChange} className="w-full input-style" placeholder="your.email@example.com" />
                                     </div>
-                                    <div>
-                                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Phone Number
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                                            placeholder="+1 (555) 123-4567"
-                                        />
+                                    <div className="col-span-1">
+                                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                        <input type="tel" id="phone" name="phone" required value={formData.phone} onChange={handleInputChange} className="w-full input-style" placeholder="+1 (555) 123-4567" />
+                                    </div>
+                                    <div className="col-span-2">
+                                        <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-2">Street Address *</label>
+                                        <input type="text" id="address" name="address" required value={formData.address} onChange={handleInputChange} className="w-full input-style" placeholder="123 Main St" />
+                                    </div>
+                                    <div className="col-span-1">
+                                        <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">City *</label>
+                                        <input type="text" id="city" name="city" required value={formData.city} onChange={handleInputChange} className="w-full input-style" placeholder="Anytown" />
+                                    </div>
+                                    <div className="col-span-1 grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-2">State *</label>
+                                            <input type="text" id="state" name="state" required value={formData.state} onChange={handleInputChange} className="w-full input-style" placeholder="CA" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="zip" className="block text-sm font-medium text-gray-700 mb-2">ZIP Code *</label>
+                                            <input type="text" id="zip" name="zip" required value={formData.zip} onChange={handleInputChange} className="w-full input-style" placeholder="12345" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Payment Info */}
+                            {/* Qualifications */}
                             <div className="bg-white rounded-xl shadow-lg p-8">
-                                <div className="flex items-center space-x-2 mb-6">
-                                    <CreditCard className="h-6 w-6 text-green-600" />
-                                    <h2 className="text-2xl font-bold text-gray-900">Payment Information</h2>
-                                    <Lock className="h-5 w-5 text-gray-400" />
+                                <div className="flex items-center space-x-3 mb-6">
+                                     <BookOpen className="h-6 w-6 text-green-600" />
+                                     <h2 className="text-2xl font-bold text-gray-900">Qualifications</h2>
                                 </div>
-                                <div className="space-y-4">
+                                <div className="space-y-6">
                                     <div>
-                                        <label htmlFor="cardName" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Name on Card *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="cardName"
-                                            name="cardName"
-                                            required
-                                            value={formData.cardName}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                                            placeholder="Full Name"
-                                        />
+                                        <label htmlFor="education" className="block text-sm font-medium text-gray-700 mb-2">Highest Level of Education *</label>
+                                        <select id="education" name="education" required value={formData.education} onChange={handleInputChange} className="w-full input-style">
+                                            <option value="">Please select</option>
+                                            <option value="high-school">High School / GED</option>
+                                            <option value="associates">Associate's Degree</option>
+                                            <option value="bachelors">Bachelor's Degree</option>
+                                            <option value="masters">Master's Degree or Higher</option>
+                                        </select>
                                     </div>
                                     <div>
-                                        <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Card Number *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="cardNumber"
-                                            name="cardNumber"
-                                            required
-                                            value={formData.cardNumber}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                                            placeholder="0000 0000 0000 0000"
-                                        />
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-6">
-                                        <div>
-                                            <label htmlFor="expiryDate" className="block text-sm font-medium text-gray-700 mb-2">
-                                                Expiry Date (MM/YY) *
-                                            </label>
-                                            <input
-                                                type="text"
-                                                id="expiryDate"
-                                                name="expiryDate"
-                                                required
-                                                value={formData.expiryDate}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                                                placeholder="MM/YY"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="cvv" className="block text-sm font-medium text-gray-700 mb-2">
-                                                CVV *
-                                            </label>
-                                            <input
-                                                type="text"
-                                                id="cvv"
-                                                name="cvv"
-                                                required
-                                                value={formData.cvv}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
-                                                placeholder="123"
-                                            />
-                                        </div>
+                                        <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-2">Briefly describe any relevant experience (if any)</label>
+                                        <textarea id="experience" name="experience" rows={5} value={formData.experience} onChange={handleInputChange} className="w-full input-style" placeholder="e.g., personal projects, previous coursework, work experience..."></textarea>
                                     </div>
                                 </div>
                             </div>
+
 
                             {/* Submit */}
                             <div className="bg-white rounded-xl shadow-lg p-8">
@@ -270,11 +192,11 @@ const Application = () => {
                                     type="submit"
                                     className="w-full bg-green-600 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2"
                                 >
-                                    <Lock className="h-5 w-5" />
-                                    <span>Complete Secure Payment</span>
+                                    <Shield className="h-5 w-5" />
+                                    <span>Submit Application</span>
                                 </button>
                                 <p className="text-center text-sm text-gray-500 mt-4">
-                                    Your payment information is encrypted and secure.
+                                    By submitting, you agree to our Terms of Service and Privacy Policy.
                                 </p>
                             </div>
                         </form>

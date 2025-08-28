@@ -26,12 +26,12 @@ const Homepage = () => {
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  to="/application.php"
-                  className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors inline-flex items-center justify-center group"
-                >
+                  to="/application" 
+                 className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors inline-flex items-center justify-center group"
+                  >
                   Enroll Now
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+              </Link>
               </div>
               <div className="flex items-center space-x-8 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
@@ -54,17 +54,7 @@ const Homepage = () => {
                 alt="Students collaborating in a modern learning environment"
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-3">
-                  <div className="bg-green-100 p-2 rounded-full">
-                    <Users className="h-6 w-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">500+</p>
-                    <p className="text-sm text-gray-600">Successful Graduates</p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -275,108 +265,27 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Success Stories
-            </h2>
-            <p className="text-xl text-gray-600">
-              Hear from our graduates who've transformed their careers
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <div className="flex text-yellow-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-              <p className="text-gray-600 mb-6 italic">
-                "The 90-day cohort completely transformed my career. I went from having no coding experience to landing a full-stack developer role at a top startup. The hands-on approach and mentorship were incredible."
-              </p>
-              <div className="flex items-center">
-                <img
-                  src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100"
-                  alt="Sarah Johnson"
-                  className="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-900">Sarah Johnson</h4>
-                  <p className="text-sm text-gray-600">Full-Stack Developer at TechStart</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <div className="flex text-yellow-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-              <p className="text-gray-600 mb-6 italic">
-                "The marketing cohort gave me the practical skills I needed to launch my own agency. The real-world projects and industry connections were invaluable. I'm now running campaigns for Fortune 500 companies."
-              </p>
-              <div className="flex items-center">
-                <img
-                  src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100"
-                  alt="Michael Chen"
-                  className="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-900">Michael Chen</h4>
-                  <p className="text-sm text-gray-600">Digital Marketing Agency Owner</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <div className="flex text-yellow-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-              <p className="text-gray-600 mb-6 italic">
-                "The design program exceeded all my expectations. The intensive format helped me build an amazing portfolio, and the career support helped me land my dream job as a UX designer at a leading design agency."
-              </p>
-              <div className="flex items-center">
-                <img
-                  src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100"
-                  alt="Emma Rodriguez"
-                  className="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-900">Emma Rodriguez</h4>
-                  <p className="text-sm text-gray-600">Senior UX Designer at DesignCo</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Upcoming Cohort CTA */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Next MERN Stack Cohort Starts August 1, 2025
+            Next MERN Stack Cohort Starts September 1, 2025
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-black-300 mb-8 max-w-2xl mx-auto">
             Limited to 25 students. Applications are reviewed on a first-come, first-served basis. Secure your spot today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/checkout"
+              to="/application"
               className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors inline-flex items-center justify-center group"
             >
               Enroll Now - Limited Spots Available
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
-          <p className="text-sm text-gray-400 mt-6">
-            Questions? Call us at +1 (555) 123-4567 or email info@nexfernacademy.com
+          <p className="text-sm text-black-400 mt-6">
+            Questions? Call us at +91 87908 47755 or email info@nexfernacademy.com
           </p>
         </div>
       </section>
